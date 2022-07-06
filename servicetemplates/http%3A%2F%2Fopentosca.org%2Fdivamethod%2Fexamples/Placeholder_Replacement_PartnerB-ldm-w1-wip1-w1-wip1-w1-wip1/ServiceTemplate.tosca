@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/divamethod/examples" id="divaMethodExamples-Placeholder_Replacement_PartnerB-ldm-w1-wip1-w1-wip1-w1-wip1">
+    <ServiceTemplate name="Placeholder_Replacement_PartnerB-ldm-w1-wip1-w1-wip1-w1-wip1" targetNamespace="http://opentosca.org/divamethod/examples" id="Placeholder_Replacement_PartnerB-ldm-w1-wip1-w1-wip1-w1-wip1">
+        <Tags>
+            <Tag name="participant" value="PartnerA"/>
+            <Tag name="choreography" value="DockerContainer_w1_0,DockerContainer_w1_placeholder6"/>
+            <Tag name="participant" value="PartnerB"/>
+            <Tag name="choreography" value="DockerContainer_w1_1,DockerContainer_w1_2,DockerContainer_w1_placeholder4,DockerContainer_w1_placeholder5"/>
+            <Tag name="participant:PartnerA" value="http::/Ttest"/>
+            <Tag name="participant:PartnerB" value="http://test.es"/>
+        </Tags>
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral1:DockerContainer_w1" id="DockerContainer_w1_0" winery:x="134" winery:y="183" winery:participant="PartnerA">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/properties">
+                        <Port/>
+                        <ContainerPort/>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID/>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="DockerRuntime" type="otrtyIgeneral:DockerRuntime" id="ReqDockerRun"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral1:DockerContainer_w1" id="DockerContainer_w1_1" winery:x="451" winery:y="196" winery:participant="PartnerB">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/properties">
+                        <Port/>
+                        <ContainerPort/>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID/>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="DockerRuntime" type="otrtyIgeneral:DockerRuntime" id="DockerRuntime"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral1:DockerContainer_w1" id="DockerContainer_w1_2" winery:x="840" winery:y="206" winery:participant="PartnerB">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/properties">
+                        <Port/>
+                        <ContainerPort/>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID/>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="DockerRuntime" type="otrtyIgeneral:DockerRuntime" id="DockerRunt"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="DockerContainer_w1_placeholder4" minInstances="1" maxInstances="1" type="tyIgeneral:DockerContainer_w1_placeholder" id="DockerContainer_w1_placeholder4" winery:x="840" winery:y="406" winery:participant="PartnerB">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DockerEngineURL>get_input: DockerEngineURL</DockerEngineURL>
+                        <DockerEngineCertificate>get_input: DockerEngineCertificate</DockerEngineCertificate>
+                        <ContainerID>get_input: ContainerID</ContainerID>
+                        <Script>get_input: Script</Script>
+                        <TargetAbsolutePath>get_input: TargetAbsolutePath</TargetAbsolutePath>
+                        <SourceURLorLocalPath>get_input: SourceURLorLocalPath</SourceURLorLocalPath>
+                    </Properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_4" type="otctyIgeneral:DockerRuntime" id="cap_4"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="DockerContainer_w1_placeholder5" minInstances="1" maxInstances="1" type="tyIgeneral:DockerContainer_w1_placeholder" id="DockerContainer_w1_placeholder5" winery:x="451" winery:y="396" winery:participant="PartnerB">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DockerEngineURL>get_input: DockerEngineURL</DockerEngineURL>
+                        <DockerEngineCertificate>get_input: DockerEngineCertificate</DockerEngineCertificate>
+                        <ContainerID>get_input: ContainerID</ContainerID>
+                        <Script>get_input: Script</Script>
+                        <TargetAbsolutePath>get_input: TargetAbsolutePath</TargetAbsolutePath>
+                        <SourceURLorLocalPath>get_input: SourceURLorLocalPath</SourceURLorLocalPath>
+                    </Properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_5" type="otctyIgeneral:DockerRuntime" id="cap_5"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="DockerContainer_w1_placeholder6" minInstances="1" maxInstances="1" type="tyIgeneral:DockerContainer_w1_placeholder" id="DockerContainer_w1_placeholder6" winery:x="134" winery:y="383" winery:participant="PartnerA">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DockerEngineURL>get_input: DockerEngineURL</DockerEngineURL>
+                        <DockerEngineCertificate>get_input: DockerEngineCertificate</DockerEngineCertificate>
+                        <ContainerID>get_input: ContainerID</ContainerID>
+                        <Script>get_input: Script</Script>
+                        <TargetAbsolutePath>get_input: TargetAbsolutePath</TargetAbsolutePath>
+                        <SourceURLorLocalPath>get_input: SourceURLorLocalPath</SourceURLorLocalPath>
+                    </Properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_6" type="otctyIgeneral:DockerRuntime" id="cap_6"/>
+                </Capabilities>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_0">
+                <SourceElement ref="DockerContainer_w1_0"/>
+                <TargetElement ref="DockerContainer_w1_1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_1">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="DockerContainer_w1_2"/>
+                <TargetElement ref="DockerContainer_w1_1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerContainer_w1_2-HostedOn-DockerContainer_w1_placeholder4">
+                <SourceElement ref="DockerContainer_w1_2"/>
+                <TargetElement ref="DockerContainer_w1_placeholder4"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerContainer_w1_1-HostedOn-DockerContainer_w1_placeholder5">
+                <SourceElement ref="DockerContainer_w1_1"/>
+                <TargetElement ref="DockerContainer_w1_placeholder5"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-DockerContainer_w1_0-HostedOn-DockerContainer_w1_placeholder6">
+                <SourceElement ref="DockerContainer_w1_0"/>
+                <TargetElement ref="DockerContainer_w1_placeholder6"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

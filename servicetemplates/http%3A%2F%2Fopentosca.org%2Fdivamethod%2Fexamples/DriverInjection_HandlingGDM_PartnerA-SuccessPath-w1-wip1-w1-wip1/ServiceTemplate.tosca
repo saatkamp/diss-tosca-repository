@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/divamethod/examples" id="divaMethodExamples-DriverInjection_HandlingGDM_PartnerA-SuccessPath-w1-wip1-w1-wip1">
+    <ServiceTemplate name="DriverInjection_HandlingGDM_PartnerA-SuccessPath-w1-wip1-w1-wip1" targetNamespace="http://opentosca.org/divamethod/examples" id="DriverInjection_HandlingGDM_PartnerA-SuccessPath-w1-wip1-w1-wip1">
+        <Tags>
+            <Tag name="participant" value="PartnerA"/>
+            <Tag name="choreography" value="DockerContainer_w1_0,DockerEngine_w1_0"/>
+            <Tag name="participant:PartnerA" value="http://test.de"/>
+            <Tag name="participant:PartnerB" value="http://partnerb.de"/>
+        </Tags>
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral1:DockerContainer_w1" id="DockerContainer_w1_0" winery:x="344" winery:y="210" winery:participant="PartnerA">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/properties">
+                        <Port/>
+                        <ContainerPort/>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID/>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                    </properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Java11Driver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="DockerEngine_w1" minInstances="1" maxInstances="1" type="otntyIgeneral1:DockerEngine_w1" id="DockerEngine_w1_0" winery:x="307" winery:y="540" winery:participant="PartnerA">
+                <Properties>
+                    <DockerEngine_Properties xmlns="http://opentosca.org/nodetypes/properties">
+                        <DockerEngineURL/>
+                        <DockerEngineCertificate/>
+                    </DockerEngine_Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="DockerContainer_w1" minInstances="1" maxInstances="1" type="otntyIgeneral1:DockerContainer_w1" id="DockerContainer_w1_1" winery:x="1114" winery:y="210" winery:participant="PartnerB">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/properties">
+                        <Port/>
+                        <ContainerPort/>
+                        <ContainerID/>
+                        <ContainerIP/>
+                        <ImageID/>
+                        <ContainerMountPath/>
+                        <HostMountFiles/>
+                        <PrivilegedMode/>
+                    </properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Python38Driver" artifactType="driverInjectionArtifactTypes:MQTT-Python3-8Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Python3-8Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="DockerEngine_w1" minInstances="1" maxInstances="1" type="otntyIgeneral1:DockerEngine_w1" id="DockerEngine_w1_1" winery:x="1109" winery:y="533" winery:participant="PartnerB">
+                <Properties>
+                    <DockerEngine_Properties xmlns="http://opentosca.org/nodetypes/properties">
+                        <DockerEngineURL/>
+                        <DockerEngineCertificate/>
+                    </DockerEngine_Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral1:Topic" id="Topic_0" winery:x="714" winery:y="207" winery:participant="PartnerB">
+                <Properties>
+                    <TopicProperties xmlns="http://opentosca.org/properties">
+                        <Name/>
+                    </TopicProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="MessageBroker" type="otrtyIgeneral:MessageBroker" id="ReqBroker"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral1:Mosquitto_2.0-w1-wip1" id="Mosquitto_2.0-w1-wip1_0" winery:x="715" winery:y="433">
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Java11Driver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Python38Driver" artifactType="driverInjectionArtifactTypes:MQTT-Python3-8Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Python3-8Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0">
+                <SourceElement ref="DockerContainer_w1_0"/>
+                <TargetElement ref="DockerEngine_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1">
+                <SourceElement ref="DockerContainer_w1_1"/>
+                <TargetElement ref="DockerEngine_w1_1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2">
+                <SourceElement ref="Topic_0"/>
+                <TargetElement ref="Mosquitto_2.0-w1-wip1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral="http://opentosca.org/driverinjection/relationshiptypes" name="ConnectsToTopic" type="otntyIgeneral:ConnectsToTopic" id="con_ConnectsToTopic_0">
+                <Properties>
+                    <ConnectsToTopic xmlns="http://opentosca.org/driverinjection/relationshiptypes">
+                        <ChannelType/>
+                        <Driver>org.opentosca.driver.mqtt.MqttDriver</Driver>
+                    </ConnectsToTopic>
+                </Properties>
+                <SourceElement ref="DockerContainer_w1_0"/>
+                <TargetElement ref="Topic_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral="http://opentosca.org/driverinjection/relationshiptypes" name="ConnectsToTopic" type="otntyIgeneral:ConnectsToTopic" id="con_ConnectsToTopic_1">
+                <Properties>
+                    <ConnectsToTopic xmlns="http://opentosca.org/driverinjection/relationshiptypes">
+                        <ChannelType/>
+                        <Driver>drivermqtt.MqttDriver</Driver>
+                    </ConnectsToTopic>
+                </Properties>
+                <SourceElement ref="DockerContainer_w1_1"/>
+                <TargetElement ref="Topic_0"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

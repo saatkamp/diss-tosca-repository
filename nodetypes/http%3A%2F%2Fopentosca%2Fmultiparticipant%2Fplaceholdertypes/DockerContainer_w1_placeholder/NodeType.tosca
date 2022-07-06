@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca/multiparticipant/placeholdertypes" id="tyIgeneral-DockerContainer_w1_placeholder">
+    <NodeType name="DockerContainer_w1_placeholder" abstract="no" final="no" targetNamespace="http://opentosca/multiparticipant/placeholdertypes">
+        <winery:PropertiesDefinition elementname="properties" namespace="http://opentosca.org/nodetypes/properties">
+            <winery:properties>
+                <winery:key>DockerEngineURL</winery:key>
+                <winery:type>xs:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>DockerEngineCertificate</winery:key>
+                <winery:type>xs:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>ContainerID</winery:key>
+                <winery:type>xs:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>Script</winery:key>
+                <winery:type>xs:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>TargetAbsolutePath</winery:key>
+                <winery:type>xs:string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>SourceURLorLocalPath</winery:key>
+                <winery:type>xs:string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+    </NodeType>
+</Definitions>

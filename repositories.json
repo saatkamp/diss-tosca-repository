@@ -1,0 +1,9 @@
+[ {
+  "name" : "TOSCA Normative Types",
+  "url" : "https://github.com/OpenTOSCA/tosca-normative-types",
+  "branch" : "main"
+}, {
+  "name" : "Common TOSCA Definitions",
+  "url" : "https://github.com/OpenTOSCA/tosca-definitions-common",
+  "branch" : "main"
+} ]
