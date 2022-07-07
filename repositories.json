@@ -5,5 +5,5 @@
 }, {
   "name" : "Common TOSCA Definitions",
   "url" : "https://github.com/OpenTOSCA/tosca-definitions-common",
-  "branch" : "main"
+  "branch" : "karo-diss-tosca-types"
 } ]

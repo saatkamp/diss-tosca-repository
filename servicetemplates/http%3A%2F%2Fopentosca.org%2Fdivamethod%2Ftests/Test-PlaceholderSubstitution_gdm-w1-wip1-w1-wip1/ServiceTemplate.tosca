@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/divamethod/tests" id="otItests-Test-PlaceholderSubstitution_gdm-w1-wip1-w1-wip1">
+    <ServiceTemplate name="Test-PlaceholderSubstitution_gdm-w1-wip1-w1-wip1" targetNamespace="http://opentosca.org/divamethod/tests" id="Test-PlaceholderSubstitution_gdm-w1-wip1-w1-wip1">
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral1:Topic" id="Topic_0" winery:x="969" winery:y="269">
+                <Properties>
+                    <TopicProperties xmlns="http://opentosca.org/properties">
+                        <Name/>
+                    </TopicProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="MessageBroker" type="otrtyIgeneral:MessageBroker" id="ReqMessageBroker"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral1:MariaDB_10-w1" id="MariaDB_10-w1_0" winery:x="586" winery:y="272">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <DBName/>
+                        <DBUser/>
+                        <DBPassword/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostMariaDB" type="otrtyIgeneral:ReqCanHostMariaDB" id="DBMS"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral1:MariaDB_10-w1" id="MariaDB_10-w1_1" winery:x="1336" winery:y="270">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <DBName/>
+                        <DBUser/>
+                        <DBPassword/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostMariaDB" type="otrtyIgeneral:ReqCanHostMariaDB" id="MariaDBMS"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="MariaDB_placeholder1" minInstances="1" maxInstances="1" type="tyIgeneral:MariaDB_placeholder" id="MariaDB_placeholder1" winery:x="1336" winery:y="470">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DBMSUser>get_input: DBMSUser</DBMSUser>
+                        <DBMSPassword>get_input: DBMSPassword</DBMSPassword>
+                    </Properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_1" type="otctyIgeneral:CanHostMariaDB" id="cap_1"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="Topic_placeholder2" minInstances="1" maxInstances="1" type="tyIgeneral:Topic_placeholder" id="Topic_placeholder2" winery:x="969" winery:y="469">
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_2" type="otctyIgeneral:ProvideTopic" id="cap_2"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="MariaDB_placeholder3" minInstances="1" maxInstances="1" type="tyIgeneral:MariaDB_placeholder" id="MariaDB_placeholder3" winery:x="586" winery:y="472">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DBMSUser>get_input: DBMSUser</DBMSUser>
+                        <DBMSPassword>get_input: DBMSPassword</DBMSPassword>
+                    </Properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_3" type="otctyIgeneral:CanHostMariaDB" id="cap_3"/>
+                </Capabilities>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral="http://opentosca.org/driverinjection/relationshiptypes" name="ConnectsToTopic" type="otntyIgeneral:ConnectsToTopic" id="con_ConnectsToTopic_0">
+                <SourceElement ref="MariaDB_10-w1_0"/>
+                <TargetElement ref="Topic_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral="http://opentosca.org/driverinjection/relationshiptypes" name="ConnectsToTopic" type="otntyIgeneral:ConnectsToTopic" id="con_ConnectsToTopic_1">
+                <Properties>
+                    <ConnectsToTopic xmlns="http://opentosca.org/driverinjection/relationshiptypes">
+                        <ChannelType/>
+                        <Driver/>
+                    </ConnectsToTopic>
+                </Properties>
+                <SourceElement ref="MariaDB_10-w1_1"/>
+                <TargetElement ref="Topic_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-MariaDB_10-w1_1-HostedOn-MariaDB_placeholder1">
+                <SourceElement ref="MariaDB_10-w1_1"/>
+                <TargetElement ref="MariaDB_placeholder1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-Topic_0-HostedOn-Topic_placeholder2">
+                <SourceElement ref="Topic_0"/>
+                <TargetElement ref="Topic_placeholder2"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-MariaDB_10-w1_0-HostedOn-MariaDB_placeholder3">
+                <SourceElement ref="MariaDB_10-w1_0"/>
+                <TargetElement ref="MariaDB_placeholder3"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

@@ -86,5 +86,13 @@
     "generatedNamespace" : false,
     "patternCollection" : false,
     "secureCollection" : false
+  },
+  "http://opentosca.org/divamethod/tests" : {
+    "namespace" : "http://opentosca.org/divamethod/tests",
+    "prefix" : "otItests",
+    "readableName" : "",
+    "generatedNamespace" : false,
+    "patternCollection" : false,
+    "secureCollection" : false
   }
 }
