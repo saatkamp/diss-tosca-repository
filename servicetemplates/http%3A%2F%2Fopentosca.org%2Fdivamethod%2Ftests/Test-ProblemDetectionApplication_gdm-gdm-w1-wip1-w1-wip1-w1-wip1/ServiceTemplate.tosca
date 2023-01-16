@@ -57,7 +57,7 @@
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_3" type="otrtyIgeneral:Java11Runtime" id="req_3"/>
                 </Requirements>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Driver" artifactType="driverInjectionArtifactTypes:Java11Driver" artifactRef="driverInjectionArtifactTemplates:Abstract-Java11Driver"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Driver" artifactType="driverInjectionArtifactTypes:Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:Abstract-Driver_Java11-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_new2" winery:x="1387" winery:y="240" winery:participant="Lukas">
@@ -70,7 +70,7 @@
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_5" type="otrtyIgeneral:Java11Runtime" id="req_5"/>
                 </Requirements>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Driver" artifactType="driverInjectionArtifactTypes:Java11Driver" artifactRef="driverInjectionArtifactTemplates:Abstract-Java11Driver"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Driver" artifactType="driverInjectionArtifactTypes:Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:Abstract-Driver_Java11-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:patternSolutionNodeTypes="http://opentosca.org/patternsolutions/nodetypes" name="PublisherProxy" minInstances="1" maxInstances="1" type="patternSolutionNodeTypes:PublisherProxy" id="MariaDB_10-w1_1_proxy4" winery:x="995" winery:y="671" winery:participant="Lukas">
@@ -78,7 +78,7 @@
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_6" type="otrtyIgeneral:Java11Runtime" id="req_6"/>
                 </Requirements>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Driver" artifactType="driverInjectionArtifactTypes:Java11Driver" artifactRef="driverInjectionArtifactTemplates:Abstract-Java11Driver"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Driver" artifactType="driverInjectionArtifactTypes:Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:Abstract-Driver_Java11-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_new5" winery:x="1051" winery:y="448" winery:participant="Lukas">
@@ -91,7 +91,7 @@
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_4" type="otrtyIgeneral:Java11Runtime" id="req_4"/>
                 </Requirements>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Driver" artifactType="driverInjectionArtifactTypes:Java11Driver" artifactRef="driverInjectionArtifactTemplates:Abstract-Java11Driver"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Driver" artifactType="driverInjectionArtifactTypes:Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:Abstract-Driver_Java11-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="Topic_placeholder9" minInstances="1" maxInstances="1" type="tyIgeneral:Topic_placeholder" id="Topic_placeholder9" winery:x="1387" winery:y="440" winery:participant="Lukas">

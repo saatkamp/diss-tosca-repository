@@ -52,7 +52,7 @@
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="Python3" type="otrtyIgeneral:Python3" id="Python3PublisherProxy0.45380312330224204"/>
                 </Requirements>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="MQTTDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="MQTTDriver" artifactType="driverInjectionArtifactTypes:MQTT-Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:MQTT-Driver-DA_Java11-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic0.5025843631019452" winery:x="604" winery:y="187" winery:participant="partnerb">
@@ -70,7 +70,7 @@
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="JavaRuntime" type="otrtyIgeneral:Java11Runtime" id="JavaRuntimeSubscriberProxy0.909174469981969"/>
                 </Requirements>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="MQTTDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="MQTTDriver" artifactType="driverInjectionArtifactTypes:MQTT-Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:MQTT-Driver-DA_Java11-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="MySQL-DB_w1_placeholder21" minInstances="1" maxInstances="1" type="tyIgeneral:MySQL-DB_w1_placeholder" id="MySQL-DB_w1_placeholder21" winery:x="1280" winery:y="578" winery:participant="partnerb">
@@ -122,8 +122,8 @@
                     <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="ProvideTopic" type="otctyIgeneral:ProvideTopic" id="cap789"/>
                 </Capabilities>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="MQTTDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
-                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="MQTTPython" artifactType="driverInjectionArtifactTypes:MQTT-Python3-8Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Python3-8Driver_DA"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="MQTTDriver" artifactType="driverInjectionArtifactTypes:MQTT-Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:MQTT-Driver-DA_Java11-w1"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="MQTTPython" artifactType="driverInjectionArtifactTypes:MQTT-Driver_Python3.8-w1" artifactRef="driverInjectionArtifactTemplates:MQTT-Driver-DA_Python3.8-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_0">

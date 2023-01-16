@@ -20,7 +20,7 @@
                     </properties>
                 </Properties>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="App1Driver" artifactType="driverInjectionArtifactTypes:Java11Driver" artifactRef="driverInjectionArtifactTemplates:Abstract-Java11Driver"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="App1Driver" artifactType="driverInjectionArtifactTypes:Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:Abstract-Driver_Java11-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="DockerEngine_w1" minInstances="1" maxInstances="1" type="otntyIgeneral1:DockerEngine_w1" id="DockerEngine_w1_0" winery:x="307" winery:y="540" winery:participant="PartnerA">
@@ -45,7 +45,7 @@
                     </properties>
                 </Properties>
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="App2Driver" artifactType="driverInjectionArtifactTypes:Python3-8Driver" artifactRef="driverInjectionArtifactTemplates:Abstract-Python3-8Driver"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="App2Driver" artifactType="driverInjectionArtifactTypes:Driver_Python3.8-w1" artifactRef="driverInjectionArtifactTemplates:Abstract-Driver_Python3.8-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="DockerEngine_w1" minInstances="1" maxInstances="1" type="otntyIgeneral1:DockerEngine_w1" id="DockerEngine_w1_1" winery:x="1109" winery:y="533" winery:participant="PartnerB">
