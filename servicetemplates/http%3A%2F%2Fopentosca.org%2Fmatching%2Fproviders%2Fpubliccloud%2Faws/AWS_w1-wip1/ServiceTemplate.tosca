@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/matching/providers/publiccloud/aws" id="otIaws-AWS_w1-wip1">
+    <ServiceTemplate name="AWS_w1-wip1" targetNamespace="http://opentosca.org/matching/providers/publiccloud/aws" id="AWS_w1-wip1">
+        <TopologyTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="AWS_Beanstalk" minInstances="1" maxInstances="1" type="ntyIgeneral:AWS_Beanstalk" id="AWS_Beanstalk_0" winery:location="publiccloud" winery:x="744" winery:y="318">
+                <Properties>
+                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                        <region/>
+                        <archetype/>
+                        <min_instances/>
+                        <max_instances/>
+                    </properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="ProvideWebServer" type="otctyIgeneral:ProvideWebServer" id="WebServerCap"/>
+                </Capabilities>
+            </NodeTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

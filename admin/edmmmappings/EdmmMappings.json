@@ -1,0 +1,97 @@
+{
+  "oneToOneMapping" : [ {
+    "edmmType" : "compute",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Compute"
+  }, {
+    "edmmType" : "dbms",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}DBMS"
+  }, {
+    "edmmType" : "database",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Database"
+  }, {
+    "edmmType" : "software_component",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Software_Component"
+  }, {
+    "edmmType" : "web_application",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Web_Application"
+  }, {
+    "edmmType" : "web_server",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Web_Server"
+  }, {
+    "edmmType" : "connects_to",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/relationtypes}ConnectsTo"
+  }, {
+    "edmmType" : "depends_on",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/relationtypes}DependsOn"
+  }, {
+    "edmmType" : "hosted_on",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/relationtypes}HostedOn"
+  }, {
+    "edmmType" : "mysql_dbms",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}MySQL_DBMS"
+  }, {
+    "edmmType" : "mysql_database",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}MySQL_Database"
+  }, {
+    "edmmType" : "tomcat",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Tomcat"
+  }, {
+    "edmmType" : "web_application",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}PetClinic"
+  }, {
+    "edmmType" : "aws_aurora",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}AWS_Aurora"
+  }, {
+    "edmmType" : "aws_beanstalk",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}AWS_Beanstalk"
+  }, {
+    "edmmType" : "auth0",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Auth0"
+  }, {
+    "edmmType" : "dbaas",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}DBaaS"
+  }, {
+    "edmmType" : "paas",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}PaaS"
+  }, {
+    "edmmType" : "platform",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Platform"
+  }, {
+    "edmmType" : "saas",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}SaaS"
+  }, {
+    "edmmType" : "software_component",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}NodeJS"
+  }, {
+    "edmmType" : "go",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Go"
+  }, {
+    "edmmType" : "web_server",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}SpringBoot"
+  }, {
+    "edmmType" : "rabbitmq",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}RabbitMQ"
+  }, {
+    "edmmType" : "mom",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}MOM"
+  }, {
+    "edmmType" : "mongodb",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}MongoDB"
+  }, {
+    "edmmType" : "mongodb_schema",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}MongoDB-Schema"
+  }, {
+    "edmmType" : "hosted_on",
+    "toscaType" : "{http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes}HostedOn"
+  }, {
+    "edmmType" : "mysql_database",
+    "toscaType" : "{http://opentosca.org/nodetypes}MySQL-DB_w1"
+  }, {
+    "edmmType" : "mysql_dbms",
+    "toscaType" : "{http://opentosca.org/nodetypes}MySQL-DBMS_5.7-w1"
+  } ],
+  "edmmTypeMapping" : [ {
+    "edmmType" : "web_application",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}PetClinic"
+  } ]
+}

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="pythondrivermqtt">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/artifacttemplates/http%3A%2F%2Fopentosca.org%2Fdriverinjection%2Fartifacttemplates/MQTT-Python3-8Driver_DA/files/pythondrivermqtt.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

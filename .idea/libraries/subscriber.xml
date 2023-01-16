@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="subscriber">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/artifacttemplates/http%3A%2F%2Fopentosca.org%2Fpatternsolutions%2Fartifacttemplates/SubscriberProxy_DA/files/subscriber.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

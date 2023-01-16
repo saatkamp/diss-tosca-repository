@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca/multiparticipant/placeholdertypes" id="tyIgeneral-MySQL-DB_w1_placeholder">
+    <NodeType name="MySQL-DB_w1_placeholder" abstract="no" final="no" targetNamespace="http://opentosca/multiparticipant/placeholdertypes">
+        <winery:PropertiesDefinition elementname="MySQLDBProperties" namespace="http://opentosca.org/nodetypes">
+            <winery:properties>
+                <winery:key>DBMSPort</winery:key>
+                <winery:type>string</winery:type>
+            </winery:properties>
+            <winery:properties>
+                <winery:key>VMIP</winery:key>
+                <winery:type>string</winery:type>
+            </winery:properties>
+        </winery:PropertiesDefinition>
+    </NodeType>
+</Definitions>

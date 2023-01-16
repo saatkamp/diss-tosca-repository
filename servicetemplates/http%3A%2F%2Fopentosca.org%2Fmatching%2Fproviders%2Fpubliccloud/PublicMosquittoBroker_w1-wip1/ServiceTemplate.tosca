@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/matching/providers/publiccloud" id="otIpubliccloud-PublicMosquittoBroker_w1-wip1">
+    <ServiceTemplate name="PublicMosquittoBroker_w1-wip1" targetNamespace="http://opentosca.org/matching/providers/publiccloud" id="PublicMosquittoBroker_w1-wip1">
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral2:Mosquitto_2.0-w1" id="Mosquitto_2.0-w1_0" winery:location="publiccloud" winery:x="989" winery:y="466">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <State>Running</State>
+                        <VMIP>193.196.54.255</VMIP>
+                        <DefaultPort>1883</DefaultPort>
+                    </Properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="ProvideTopic" type="otctyIgeneral:ProvideTopic" id="TopicforCommunication"/>
+                </Capabilities>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="JavaDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="PythonDriver" artifactType="driverInjectionArtifactTypes:MQTT-Python3-8Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Python3-8Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

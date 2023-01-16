@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/divamethod/tests" id="otItests-Test-PlaceholderSubstitution_placeholder-aware-splitting-w1-wip1">
+    <ServiceTemplate name="Test-PlaceholderSubstitution_placeholder-aware-splitting-w1-wip1" targetNamespace="http://opentosca.org/divamethod/tests" id="Test-PlaceholderSubstitution_placeholder-aware-splitting-w1-wip1">
+        <Tags>
+            <Tag name="participant:partnerA" value="test.de"/>
+            <Tag name="participant:partnerB" value="callme.de"/>
+        </Tags>
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_0" winery:location="PublicCloud" winery:x="729" winery:y="87" winery:participant="partnerA">
+                <Properties>
+                    <TopicProperties xmlns="http://opentosca.org/properties">
+                        <Name/>
+                    </TopicProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="MessageBroker" type="otrtyIgeneral:MessageBroker" id="ReqMessageBroker"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDB_10-w1" id="MariaDB_10-w1_0" winery:location="privateCloud" winery:x="362" winery:y="81" winery:participant="partnerA">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <DBName/>
+                        <DBUser/>
+                        <DBPassword/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostMariaDB" type="otrtyIgeneral:ReqCanHostMariaDB" id="DBMS"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="VSphere" minInstances="1" maxInstances="1" type="otntyIgeneral2:VSphere_5.5-w1" id="VSphere_5.5-w1_01" winery:x="640" winery:y="732" winery:participant="partnerA">
+                <Properties>
+                    <CloudProviderProperties xmlns="http://opentosca.org/nodetypes">
+                        <HypervisorEndpoint/>
+                        <HypervisorTenantID/>
+                        <HypervisorUserName/>
+                        <HypervisorUserPassword/>
+                    </CloudProviderProperties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral2:Mosquitto_2.0-w1" id="Mosquitto_2.0-w1_02" winery:location="" winery:x="737" winery:y="358" winery:participant="partnerA">
+                <Requirements>
+                    <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="OperatingSystem" type="rtyIgeneral:OperatingSystem" id="InfrastructureReq2"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="ProvideTopic" type="otctyIgeneral:ProvideTopic" id="ProvideTopic"/>
+                </Capabilities>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="JavaDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="PythonDriver" artifactType="driverInjectionArtifactTypes:MQTT-Python3-8Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Python3-8Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Ubuntu-VM" minInstances="1" maxInstances="1" type="otntyIgeneral2:Ubuntu-VM_18.04-w1" id="Ubuntu-VM_18.04-w1_03" winery:x="294" winery:y="605" winery:participant="partnerA">
+                <Properties>
+                    <VirtualMachineProperties xmlns="http://opentosca.org/nodetypes">
+                        <instanceRef/>
+                        <VMIP/>
+                        <VMInstanceID/>
+                        <VMType/>
+                        <VMUserName/>
+                        <VMUserPassword/>
+                        <VMPrivateKey/>
+                        <VMPublicKey/>
+                        <VMKeyPairName/>
+                    </VirtualMachineProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" type="otrtyIgeneral:ReqCanHostUbuntuVM" id="InfrastructureReq"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="OperatingSystem" type="ctyIgeneral:OperatingSystem" id="Operating"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Ubuntu-VM" minInstances="1" maxInstances="1" type="otntyIgeneral2:Ubuntu-VM_18.04-w1" id="Ubuntu-VM_18.04-w1_14" winery:x="748" winery:y="533" winery:participant="partnerA">
+                <Properties>
+                    <VirtualMachineProperties xmlns="http://opentosca.org/nodetypes">
+                        <instanceRef/>
+                        <VMIP/>
+                        <VMInstanceID/>
+                        <VMType/>
+                        <VMUserName/>
+                        <VMUserPassword/>
+                        <VMPrivateKey/>
+                        <VMPublicKey/>
+                        <VMKeyPairName/>
+                    </VirtualMachineProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" type="otrtyIgeneral:ReqCanHostUbuntuVM" id="HostVM"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="OperatingSystem" type="ctyIgeneral:OperatingSystem" id="provideOS"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDBMS" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDBMS_10-w1" id="MariaDBMS_10-w1_05" winery:x="334" winery:y="397" winery:participant="partnerA">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <DBMSUser/>
+                        <DBMSPassword/>
+                        <DBMSPort/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="OperatingSystem" type="rtyIgeneral:OperatingSystem" id="HostingDBMS"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="CanHostMariaDB" type="otctyIgeneral:CanHostMariaDB" id="HostDB"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDB_10-w1" id="MariaDB_10-w1_1" winery:x="1052" winery:y="81" winery:participant="partnerB">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <DBName/>
+                        <DBUser/>
+                        <DBPassword/>
+                    </properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDBMS" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDBMS_10-w1" id="MariaDBMS_10-w1_0" winery:x="1073" winery:y="301" winery:participant="partnerB">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <DBMSUser/>
+                        <DBMSPassword/>
+                        <DBMSPort/>
+                    </properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Ubuntu-VM" minInstances="1" maxInstances="1" type="otntyIgeneral2:Ubuntu-VM_18.04-w1" id="Ubuntu-VM_18.04-w1_0" winery:x="1068" winery:y="471" winery:participant="partnerB">
+                <Properties>
+                    <VirtualMachineProperties xmlns="http://opentosca.org/nodetypes">
+                        <instanceRef/>
+                        <VMIP/>
+                        <VMInstanceID/>
+                        <VMType/>
+                        <VMUserName/>
+                        <VMUserPassword/>
+                        <VMPrivateKey/>
+                        <VMPublicKey/>
+                        <VMKeyPairName/>
+                    </VirtualMachineProperties>
+                </Properties>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral="http://opentosca.org/driverinjection/relationshiptypes" name="ConnectsToTopic" type="otntyIgeneral:ConnectsToTopic" id="con_ConnectsToTopic_0">
+                <SourceElement ref="MariaDB_10-w1_0"/>
+                <TargetElement ref="Topic_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-Topic_0-HostedOn-Topic_placeholder2">
+                <SourceElement ref="Topic_0"/>
+                <TargetElement ref="Mosquitto_2.0-w1_02"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-MariaDB_10-w1_0-HostedOn-MariaDB_placeholder3">
+                <SourceElement ref="MariaDB_10-w1_0"/>
+                <TargetElement ref="MariaDBMS_10-w1_05"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_4100">
+                <SourceElement ref="Mosquitto_2.0-w1_02"/>
+                <TargetElement ref="Ubuntu-VM_18.04-w1_14"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_5101">
+                <SourceElement ref="Ubuntu-VM_18.04-w1_14"/>
+                <TargetElement ref="VSphere_5.5-w1_01"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1102">
+                <SourceElement ref="MariaDBMS_10-w1_05"/>
+                <TargetElement ref="Ubuntu-VM_18.04-w1_03"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2103">
+                <SourceElement ref="Ubuntu-VM_18.04-w1_03"/>
+                <TargetElement ref="VSphere_5.5-w1_01"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral="http://opentosca.org/driverinjection/relationshiptypes" name="ConnectsToTopic" type="otntyIgeneral:ConnectsToTopic" id="con_ConnectsToTopic_1">
+                <Properties>
+                    <ConnectsToTopic xmlns="http://opentosca.org/driverinjection/relationshiptypes">
+                        <ChannelType/>
+                        <Driver/>
+                    </ConnectsToTopic>
+                </Properties>
+                <SourceElement ref="MariaDB_10-w1_1"/>
+                <TargetElement ref="Topic_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0">
+                <SourceElement ref="MariaDB_10-w1_1"/>
+                <TargetElement ref="MariaDBMS_10-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1">
+                <SourceElement ref="MariaDBMS_10-w1_0"/>
+                <TargetElement ref="Ubuntu-VM_18.04-w1_0"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

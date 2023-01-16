@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="drivermqtt">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/artifacttemplates/http%3A%2F%2Fopentosca.org%2Fdriverinjection%2Fartifacttemplates/MQTT-Java11Driver_DA/files/drivermqtt.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

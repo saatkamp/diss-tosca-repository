@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/divamethod/tests" id="otItests-Test-PlaceholderSubstitution_w1-wip1">
     <ServiceTemplate name="Test-PlaceholderSubstitution_w1-wip1" targetNamespace="http://opentosca.org/divamethod/tests" id="Test-PlaceholderSubstitution_w1-wip1">
+        <Tags>
+            <Tag name="participant:partnerA" value="test.de"/>
+            <Tag name="participant:partnerB" value="test24.de"/>
+        </Tags>
         <TopologyTemplate>
-            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral1:Topic" id="Topic_0" winery:x="969" winery:y="269">
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_0" winery:x="969" winery:y="269" winery:participant="partnerA">
                 <Properties>
                     <TopicProperties xmlns="http://opentosca.org/properties">
                         <Name/>
@@ -12,7 +16,7 @@
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="MessageBroker" type="otrtyIgeneral:MessageBroker" id="ReqMessageBroker"/>
                 </Requirements>
             </NodeTemplate>
-            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral1:MariaDB_10-w1" id="MariaDB_10-w1_0" winery:x="586" winery:y="272">
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDB_10-w1" id="MariaDB_10-w1_0" winery:x="586" winery:y="272" winery:participant="partnerB">
                 <Properties>
                     <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
                         <DBName/>
@@ -24,7 +28,7 @@
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostMariaDB" type="otrtyIgeneral:ReqCanHostMariaDB" id="DBMS"/>
                 </Requirements>
             </NodeTemplate>
-            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral1:MariaDB_10-w1" id="MariaDB_10-w1_1" winery:x="1336" winery:y="270">
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDB_10-w1" id="MariaDB_10-w1_1" winery:x="1336" winery:y="270" winery:participant="partnerA">
                 <Properties>
                     <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
                         <DBName/>

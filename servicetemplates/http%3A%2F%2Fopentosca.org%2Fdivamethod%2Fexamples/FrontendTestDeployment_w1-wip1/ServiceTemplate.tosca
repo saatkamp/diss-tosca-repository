@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/divamethod/examples" id="divaMethodExamples-FrontendTestDeployment_w1-wip1">
+    <ServiceTemplate name="FrontendTestDeployment_w1-wip1" targetNamespace="http://opentosca.org/divamethod/examples" id="FrontendTestDeployment_w1-wip1">
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/example/applications/nodetypes" name="RealWorld-Application" minInstances="1" maxInstances="1" type="otntyIgeneral2:RealWorld-Application_Angular-w1" id="RealWorld-Application_Angular-w1_0" winery:x="1014" winery:y="89">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <AppName>RealWorldApplication-Angular</AppName>
+                        <context_root/>
+                    </Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqWebServer" type="otrtyIgeneral:ReqWebServer" id="WebServerForWebApp"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="NGINX" minInstances="1" maxInstances="1" type="otntyIgeneral2:NGINX_latest-w1" id="NGINX_latest-w1_0" winery:x="1368" winery:y="258">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <component_version/>
+                        <admin_credential/>
+                    </Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="OperatingSystem" type="rtyIgeneral:OperatingSystem" id="req20"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="ProvideWebServer" type="otctyIgeneral:ProvideWebServer" id="WebServerProvider"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Ubuntu-VM" minInstances="1" maxInstances="1" type="otntyIgeneral2:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_0" winery:x="1272" winery:y="656">
+                <Properties>
+                    <VirtualMachineProperties xmlns="http://opentosca.org/nodetypes">
+                        <instanceRef/>
+                        <VMIP/>
+                        <VMInstanceID/>
+                        <VMType/>
+                        <VMUserName/>
+                        <VMUserPassword/>
+                        <VMPrivateKey/>
+                        <VMPublicKey/>
+                        <VMKeyPairName/>
+                    </VirtualMachineProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" type="otrtyIgeneral:ReqCanHostUbuntuVM" id="req30"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="OperatingSystem" type="ctyIgeneral:OperatingSystem" id="cap30"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="OpenStack" minInstances="1" maxInstances="1" type="otntyIgeneral2:OpenStack_22-Victoria-w1" id="OpenStack_22-Victoria-w1_0" winery:x="1211" winery:y="815">
+                <Properties>
+                    <CloudProviderProperties xmlns="http://opentosca.org/nodetypes">
+                        <HypervisorEndpoint/>
+                        <HypervisorApplicationID/>
+                        <HypervisorApplicationSecret/>
+                    </CloudProviderProperties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="CapCanHostUbuntuVM" type="otctyIgeneral:CapCanHostUbuntuVM" id="cap40"/>
+                </Capabilities>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0">
+                <SourceElement ref="RealWorld-Application_Angular-w1_0"/>
+                <TargetElement ref="NGINX_latest-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1">
+                <SourceElement ref="NGINX_latest-w1_0"/>
+                <TargetElement ref="Ubuntu-VM_20.04-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2">
+                <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
+                <TargetElement ref="OpenStack_22-Victoria-w1_0"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

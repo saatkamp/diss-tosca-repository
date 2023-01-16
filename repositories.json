@@ -1,9 +1,18 @@
 [ {
   "name" : "TOSCA Normative Types",
   "url" : "https://github.com/OpenTOSCA/tosca-normative-types",
-  "branch" : "main"
+  "branch" : "karo-diss-tosca-types"
 }, {
   "name" : "Common TOSCA Definitions",
   "url" : "https://github.com/OpenTOSCA/tosca-definitions-common",
   "branch" : "karo-diss-tosca-types"
-} ]
+}, {
+    "name": "OpenTOSCA Artifact Types",
+    "url": "https://github.com/OpenTOSCA/tosca-common-artifact-types",
+    "branch": "karo-diss-tosca-types"
+  }, {
+  "name": "OpenTOSCA Example Application",
+  "url": "https://github.com/OpenTOSCA/tosca-definitions-example-applications",
+  "branch": "main"
+}
+]

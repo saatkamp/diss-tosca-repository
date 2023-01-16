@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/divamethod/tests" id="otItests-Test-ProblemDetectionApplication_w1-wip1">
+    <ServiceTemplate name="Test-ProblemDetectionApplication_w1-wip1" targetNamespace="http://opentosca.org/divamethod/tests" id="Test-ProblemDetectionApplication_w1-wip1">
+        <Tags>
+            <Tag name="participant:Karo" value="http://ok.test"/>
+            <Tag name="participant:Lukas" value="http://esbrennt.de"/>
+        </Tags>
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDB_10-w1" id="MariaDB_10-w1_0" winery:x="251" winery:y="212" winery:participant="Karo">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <DBName/>
+                        <DBUser/>
+                        <DBPassword/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostMariaDB" type="otrtyIgeneral:ReqCanHostMariaDB" id="NeedDBMS"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDB_10-w1" id="MariaDB_10-w1_1" winery:x="737" winery:y="200" winery:participant="Lukas">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <DBName/>
+                        <DBUser/>
+                        <DBPassword/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostMariaDB" type="otrtyIgeneral:ReqCanHostMariaDB" id="NeedA"/>
+                </Requirements>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral1="http://opentosca.org/problemdetection/relationshiptypes" name="HTTPConnectsTo" type="otntyIgeneral1:HTTPConnectsTo" id="con_HTTPConnectsTo_0">
+                <SourceElement ref="MariaDB_10-w1_0"/>
+                <TargetElement ref="MariaDB_10-w1_1"/>
+                <Policies>
+                    <Policy xmlns:otptyIgeneral="http://opentosca.org/problemdetection/policytypes" xmlns:otpteIgeneral="http://opentosca.org/problemdetection/policytemplates" name="ddeerfrf" policyType="otptyIgeneral:SensitiveData" policyRef="otpteIgeneral:SensitiveData"/>
+                </Policies>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

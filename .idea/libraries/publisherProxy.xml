@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="publisherProxy">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/artifacttemplates/http%3A%2F%2Fopentosca.org%2Fpatternsolutions%2Fartifacttemplates/PublisherProxy_DA/files/publisherProxy.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

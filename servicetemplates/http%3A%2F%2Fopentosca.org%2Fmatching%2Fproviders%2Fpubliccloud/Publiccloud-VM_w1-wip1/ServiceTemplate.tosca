@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/matching/providers/publiccloud" id="otIpubliccloud-Publiccloud-VM_w1-wip1">
+    <ServiceTemplate name="Publiccloud-VM_w1-wip1" targetNamespace="http://opentosca.org/matching/providers/publiccloud" id="Publiccloud-VM_w1-wip1">
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="OpenStack" minInstances="1" maxInstances="1" type="otntyIgeneral2:OpenStack_22-Victoria-w1" id="OpenStack_22-Victoria-w1_0" winery:location="publiccloud" winery:x="799" winery:y="616">
+                <Properties>
+                    <CloudProviderProperties xmlns="http://opentosca.org/nodetypes">
+                        <HypervisorEndpoint/>
+                        <HypervisorApplicationID/>
+                        <HypervisorApplicationSecret/>
+                    </CloudProviderProperties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="CapCanHostUbuntuVM" type="otctyIgeneral:CapCanHostUbuntuVM" id="Infrastructure"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Ubuntu-VM" minInstances="1" maxInstances="1" type="otntyIgeneral2:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_0" winery:location="publiccloud" winery:x="798" winery:y="214">
+                <Properties>
+                    <VirtualMachineProperties xmlns="http://opentosca.org/nodetypes">
+                        <instanceRef/>
+                        <VMIP/>
+                        <VMInstanceID/>
+                        <VMType/>
+                        <VMUserName/>
+                        <VMUserPassword/>
+                        <VMPrivateKey/>
+                        <VMPublicKey/>
+                        <VMKeyPairName/>
+                    </VirtualMachineProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" type="otrtyIgeneral:ReqCanHostUbuntuVM" id="InfrastructureReq"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="OperatingSystem" type="ctyIgeneral:OperatingSystem" id="OperatingSystem"/>
+                </Capabilities>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0">
+                <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
+                <TargetElement ref="OpenStack_22-Victoria-w1_0"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

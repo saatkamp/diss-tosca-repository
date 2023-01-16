@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/divamethod/tests" id="otItests-Test-ProblemDetectionApplication_gdm-gdm-w1-wip1-w1-wip1-w1-wip1-substituted-w1-wip1">
+    <ServiceTemplate name="Test-ProblemDetectionApplication_gdm-gdm-w1-wip1-w1-wip1-w1-wip1-substituted-w1-wip1" targetNamespace="http://opentosca.org/divamethod/tests" id="Test-ProblemDetectionApplication_gdm-gdm-w1-wip1-w1-wip1-w1-wip1-substituted-w1-wip1">
+        <Tags>
+            <Tag name="participant:Karo" value="http://ok.test"/>
+            <Tag name="participant:Lukas" value="http://esbrennt.de"/>
+        </Tags>
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDB_10-w1" id="MariaDB_10-w1_0" winery:x="399" winery:y="88" winery:participant="Karo">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <DBName/>
+                        <DBUser/>
+                        <DBPassword/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostMariaDB" type="otrtyIgeneral:ReqCanHostMariaDB" id="NeedDBMS"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDB_10-w1" id="MariaDB_10-w1_1" winery:x="1359" winery:y="749" winery:participant="Lukas">
+                <Properties>
+                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                        <DBName/>
+                        <DBUser/>
+                        <DBPassword/>
+                    </properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostMariaDB" type="otrtyIgeneral:ReqCanHostMariaDB" id="NeedA"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="MariaDB_placeholder1" minInstances="1" maxInstances="1" type="tyIgeneral:MariaDB_placeholder" id="MariaDB_placeholder1" winery:x="1355" winery:y="942" winery:participant="Lukas">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DBMSUser>get_input: DBMSUser</DBMSUser>
+                        <DBMSPassword>get_input: DBMSPassword</DBMSPassword>
+                    </Properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_1" type="otctyIgeneral:CanHostMariaDB" id="cap_1"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="MariaDB_placeholder2" minInstances="1" maxInstances="1" type="tyIgeneral:MariaDB_placeholder" id="MariaDB_placeholder2" winery:x="388" winery:y="330" winery:participant="Karo">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <DBMSUser>get_input: DBMSUser</DBMSUser>
+                        <DBMSPassword>get_input: DBMSPassword</DBMSPassword>
+                    </Properties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_2" type="otctyIgeneral:CanHostMariaDB" id="cap_2"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:patternSolutionNodeTypes="http://opentosca.org/patternsolutions/nodetypes" name="PublisherProxy" minInstances="1" maxInstances="1" type="patternSolutionNodeTypes:PublisherProxy" id="MariaDB_10-w1_0_proxy1" winery:x="1004" winery:y="73" winery:participant="Karo">
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_3" type="otrtyIgeneral:Java11Runtime" id="req_3"/>
+                </Requirements>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="JavaDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_new2" winery:x="1387" winery:y="240" winery:participant="Lukas">
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_1" type="otrtyIgeneral:MessageBroker" id="req_1"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:patternSolutionNodeTypes="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="patternSolutionNodeTypes:SubscriberProxy" id="MariaDB_10-w1_1_proxy3" winery:x="1434" winery:y="459" winery:participant="Lukas">
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_5" type="otrtyIgeneral:Java11Runtime" id="req_5"/>
+                </Requirements>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="JavaDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:patternSolutionNodeTypes="http://opentosca.org/patternsolutions/nodetypes" name="PublisherProxy" minInstances="1" maxInstances="1" type="patternSolutionNodeTypes:PublisherProxy" id="MariaDB_10-w1_1_proxy4" winery:x="995" winery:y="671" winery:participant="Lukas">
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_6" type="otrtyIgeneral:Java11Runtime" id="req_6"/>
+                </Requirements>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="JavaDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_new5" winery:x="1051" winery:y="448" winery:participant="Lukas">
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_2" type="otrtyIgeneral:MessageBroker" id="req_2"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:patternSolutionNodeTypes="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="patternSolutionNodeTypes:SubscriberProxy" id="MariaDB_10-w1_0_proxy6" winery:x="712" winery:y="173" winery:participant="Karo">
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_4" type="otrtyIgeneral:Java11Runtime" id="req_4"/>
+                </Requirements>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="JavaDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="PublisherProxy_placeholder10" minInstances="1" maxInstances="1" type="tyIgeneral:PublisherProxy_placeholder" id="PublisherProxy_placeholder10" winery:x="995" winery:y="871" winery:participant="Lukas">
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_10" type="otctyIgeneral:Java11Runtime" id="cap_10"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="PublisherProxy_placeholder11" minInstances="1" maxInstances="1" type="tyIgeneral:PublisherProxy_placeholder" id="PublisherProxy_placeholder11" winery:x="1004" winery:y="273" winery:participant="Karo">
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_11" type="otctyIgeneral:Java11Runtime" id="cap_11"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="SubscriberProxy_placeholder12" minInstances="1" maxInstances="1" type="tyIgeneral:SubscriberProxy_placeholder" id="SubscriberProxy_placeholder12" winery:x="1434" winery:y="659" winery:participant="Lukas">
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_12" type="otctyIgeneral:Java11Runtime" id="cap_12"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="SubscriberProxy_placeholder13" minInstances="1" maxInstances="1" type="tyIgeneral:SubscriberProxy_placeholder" id="SubscriberProxy_placeholder13" winery:x="712" winery:y="373" winery:participant="Karo">
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_13" type="otctyIgeneral:Java11Runtime" id="cap_13"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral2:Mosquitto_2.0-w1" id="Mosquitto_2.0-w1_01" winery:x="967" winery:y="412">
+                <Requirements>
+                    <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="OperatingSystem" type="rtyIgeneral:OperatingSystem" id="InfrastructureReq2"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="ProvideTopic" type="otctyIgeneral:ProvideTopic" id="ProvideTopic"/>
+                </Capabilities>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="JavaDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="PythonDriver" artifactType="driverInjectionArtifactTypes:MQTT-Python3-8Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Python3-8Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Ubuntu-VM" minInstances="1" maxInstances="1" type="otntyIgeneral2:Ubuntu-VM_18.04-w1" id="Ubuntu-VM_18.04-w1_12" winery:x="965" winery:y="574">
+                <Properties>
+                    <VirtualMachineProperties xmlns="http://opentosca.org/nodetypes">
+                        <instanceRef/>
+                        <VMIP/>
+                        <VMInstanceID/>
+                        <VMType/>
+                        <VMUserName/>
+                        <VMUserPassword/>
+                        <VMPrivateKey/>
+                        <VMPublicKey/>
+                        <VMKeyPairName/>
+                    </VirtualMachineProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" type="otrtyIgeneral:ReqCanHostUbuntuVM" id="HostVM"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="OperatingSystem" type="ctyIgeneral:OperatingSystem" id="provideOS"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="VSphere" minInstances="1" maxInstances="1" type="otntyIgeneral2:VSphere_5.5-w1" id="VSphere_5.5-w1_03" winery:x="581" winery:y="874">
+                <Properties>
+                    <CloudProviderProperties xmlns="http://opentosca.org/nodetypes">
+                        <HypervisorEndpoint/>
+                        <HypervisorTenantID/>
+                        <HypervisorUserName/>
+                        <HypervisorUserPassword/>
+                    </CloudProviderProperties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="CapCanHostUbuntuVM" type="otctyIgeneral:CapCanHostUbuntuVM" id="Infastructure"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral2:Mosquitto_2.0-w1" id="Mosquitto_2.0-w1_04" winery:x="967" winery:y="412">
+                <Requirements>
+                    <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="OperatingSystem" type="rtyIgeneral:OperatingSystem" id="InfrastructureReq2_1"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="ProvideTopic" type="otctyIgeneral:ProvideTopic" id="ProvideTopic_1"/>
+                </Capabilities>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="JavaDriver" artifactType="driverInjectionArtifactTypes:MQTT-Java11Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Java11Driver_DA"/>
+                    <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="PythonDriver" artifactType="driverInjectionArtifactTypes:MQTT-Python3-8Driver" artifactRef="driverInjectionArtifactTemplates:MQTT-Python3-8Driver_DA"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Ubuntu-VM" minInstances="1" maxInstances="1" type="otntyIgeneral2:Ubuntu-VM_18.04-w1" id="Ubuntu-VM_18.04-w1_15" winery:x="965" winery:y="574">
+                <Properties>
+                    <VirtualMachineProperties xmlns="http://opentosca.org/nodetypes">
+                        <instanceRef/>
+                        <VMIP/>
+                        <VMInstanceID/>
+                        <VMType/>
+                        <VMUserName/>
+                        <VMUserPassword/>
+                        <VMPrivateKey/>
+                        <VMPublicKey/>
+                        <VMKeyPairName/>
+                    </VirtualMachineProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" type="otrtyIgeneral:ReqCanHostUbuntuVM" id="HostVM_1"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="OperatingSystem" type="ctyIgeneral:OperatingSystem" id="provideOS_1"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="VSphere" minInstances="1" maxInstances="1" type="otntyIgeneral2:VSphere_5.5-w1" id="VSphere_5.5-w1_06" winery:x="581" winery:y="874">
+                <Properties>
+                    <CloudProviderProperties xmlns="http://opentosca.org/nodetypes">
+                        <HypervisorEndpoint/>
+                        <HypervisorTenantID/>
+                        <HypervisorUserName/>
+                        <HypervisorUserPassword/>
+                    </CloudProviderProperties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="CapCanHostUbuntuVM" type="otctyIgeneral:CapCanHostUbuntuVM" id="Infastructure_1"/>
+                </Capabilities>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-MariaDB_10-w1_1-HostedOn-MariaDB_placeholder1">
+                <SourceElement ref="MariaDB_10-w1_1"/>
+                <TargetElement ref="MariaDB_placeholder1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-MariaDB_10-w1_0-HostedOn-MariaDB_placeholder2">
+                <SourceElement ref="MariaDB_10-w1_0"/>
+                <TargetElement ref="MariaDB_placeholder2"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con-MariaDB_10-w1_0-connectsTo-MariaDB_10-w1_0_proxy1">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="MariaDB_10-w1_0"/>
+                <TargetElement ref="MariaDB_10-w1_0_proxy1"/>
+                <Policies>
+                    <Policy xmlns:otptyIgeneral="http://opentosca.org/problemdetection/policytypes" xmlns:otpteIgeneral="http://opentosca.org/problemdetection/policytemplates" name="ddeerfrf" policyType="otptyIgeneral:SensitiveData" policyRef="otpteIgeneral:SensitiveData"/>
+                </Policies>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral="http://opentosca.org/driverinjection/relationshiptypes" name="ConnectsToTopic" type="otntyIgeneral:ConnectsToTopic" id="con-MariaDB_10-w1_0_proxy1-connectsTo-Topic_new2">
+                <Properties>
+                    <ConnectsToTopic xmlns="http://opentosca.org/driverinjection/relationshiptypes">
+                        <ChannelType/>
+                        <Driver>org.opentosca.driver.mqtt.MqttDriver</Driver>
+                    </ConnectsToTopic>
+                </Properties>
+                <SourceElement ref="MariaDB_10-w1_0_proxy1"/>
+                <TargetElement ref="Topic_new2"/>
+                <Policies>
+                    <Policy xmlns:otptyIgeneral="http://opentosca.org/problemdetection/policytypes" xmlns:otpteIgeneral="http://opentosca.org/problemdetection/policytemplates" name="ddeerfrf" policyType="otptyIgeneral:SensitiveData" policyRef="otpteIgeneral:SensitiveData"/>
+                </Policies>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral="http://opentosca.org/driverinjection/relationshiptypes" name="ConnectsToTopic" type="otntyIgeneral:ConnectsToTopic" id="con-MariaDB_10-w1_1_proxy3-connectsTo-Topic_new2">
+                <Properties>
+                    <ConnectsToTopic xmlns="http://opentosca.org/driverinjection/relationshiptypes">
+                        <ChannelType/>
+                        <Driver>org.opentosca.driver.mqtt.MqttDriver</Driver>
+                    </ConnectsToTopic>
+                </Properties>
+                <SourceElement ref="MariaDB_10-w1_1_proxy3"/>
+                <TargetElement ref="Topic_new2"/>
+                <Policies>
+                    <Policy xmlns:otptyIgeneral="http://opentosca.org/problemdetection/policytypes" xmlns:otpteIgeneral="http://opentosca.org/problemdetection/policytemplates" name="ddeerfrf" policyType="otptyIgeneral:SensitiveData" policyRef="otpteIgeneral:SensitiveData"/>
+                </Policies>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con-MariaDB_10-w1_1_proxy3-connectsTo-MariaDB_10-w1_1">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="MariaDB_10-w1_1_proxy3"/>
+                <TargetElement ref="MariaDB_10-w1_1"/>
+                <Policies>
+                    <Policy xmlns:otptyIgeneral="http://opentosca.org/problemdetection/policytypes" xmlns:otpteIgeneral="http://opentosca.org/problemdetection/policytemplates" name="ddeerfrf" policyType="otptyIgeneral:SensitiveData" policyRef="otpteIgeneral:SensitiveData"/>
+                </Policies>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con-MariaDB_10-w1_0_proxy6-connectsTo-MariaDB_10-w1_0">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="MariaDB_10-w1_0_proxy6"/>
+                <TargetElement ref="MariaDB_10-w1_0"/>
+                <Policies>
+                    <Policy xmlns:otptyIgeneral="http://opentosca.org/problemdetection/policytypes" xmlns:otpteIgeneral="http://opentosca.org/problemdetection/policytemplates" name="ddeerfrf" policyType="otptyIgeneral:SensitiveData" policyRef="otpteIgeneral:SensitiveData"/>
+                </Policies>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral="http://opentosca.org/driverinjection/relationshiptypes" name="ConnectsToTopic" type="otntyIgeneral:ConnectsToTopic" id="con-MariaDB_10-w1_0_proxy6-connectsTo-Topic_new5">
+                <Properties>
+                    <ConnectsToTopic xmlns="http://opentosca.org/driverinjection/relationshiptypes">
+                        <ChannelType/>
+                        <Driver>org.opentosca.driver.mqtt.MqttDriver</Driver>
+                    </ConnectsToTopic>
+                </Properties>
+                <SourceElement ref="MariaDB_10-w1_0_proxy6"/>
+                <TargetElement ref="Topic_new5"/>
+                <Policies>
+                    <Policy xmlns:otptyIgeneral="http://opentosca.org/problemdetection/policytypes" xmlns:otpteIgeneral="http://opentosca.org/problemdetection/policytemplates" name="ddeerfrf" policyType="otptyIgeneral:SensitiveData" policyRef="otpteIgeneral:SensitiveData"/>
+                </Policies>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:otntyIgeneral="http://opentosca.org/driverinjection/relationshiptypes" name="ConnectsToTopic" type="otntyIgeneral:ConnectsToTopic" id="con-MariaDB_10-w1_1_proxy4-connectsTo-Topic_new5">
+                <Properties>
+                    <ConnectsToTopic xmlns="http://opentosca.org/driverinjection/relationshiptypes">
+                        <ChannelType/>
+                        <Driver>org.opentosca.driver.mqtt.MqttDriver</Driver>
+                    </ConnectsToTopic>
+                </Properties>
+                <SourceElement ref="MariaDB_10-w1_1_proxy4"/>
+                <TargetElement ref="Topic_new5"/>
+                <Policies>
+                    <Policy xmlns:otptyIgeneral="http://opentosca.org/problemdetection/policytypes" xmlns:otpteIgeneral="http://opentosca.org/problemdetection/policytemplates" name="ddeerfrf" policyType="otptyIgeneral:SensitiveData" policyRef="otpteIgeneral:SensitiveData"/>
+                </Policies>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con-MariaDB_10-w1_1-connectsTo-MariaDB_10-w1_1_proxy4">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="MariaDB_10-w1_1"/>
+                <TargetElement ref="MariaDB_10-w1_1_proxy4"/>
+                <Policies>
+                    <Policy xmlns:otptyIgeneral="http://opentosca.org/problemdetection/policytypes" xmlns:otpteIgeneral="http://opentosca.org/problemdetection/policytemplates" name="ddeerfrf" policyType="otptyIgeneral:SensitiveData" policyRef="otpteIgeneral:SensitiveData"/>
+                </Policies>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-Topic_new2-HostedOn-Topic_placeholder9">
+                <SourceElement ref="Topic_new2"/>
+                <TargetElement ref="Mosquitto_2.0-w1_01"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-MariaDB_10-w1_1_proxy4-HostedOn-PublisherProxy_placeholder10">
+                <SourceElement ref="MariaDB_10-w1_1_proxy4"/>
+                <TargetElement ref="PublisherProxy_placeholder10"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-MariaDB_10-w1_0_proxy1-HostedOn-PublisherProxy_placeholder11">
+                <SourceElement ref="MariaDB_10-w1_0_proxy1"/>
+                <TargetElement ref="PublisherProxy_placeholder11"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-MariaDB_10-w1_1_proxy3-HostedOn-SubscriberProxy_placeholder12">
+                <SourceElement ref="MariaDB_10-w1_1_proxy3"/>
+                <TargetElement ref="SubscriberProxy_placeholder12"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-MariaDB_10-w1_0_proxy6-HostedOn-SubscriberProxy_placeholder13">
+                <SourceElement ref="MariaDB_10-w1_0_proxy6"/>
+                <TargetElement ref="SubscriberProxy_placeholder13"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con-Topic_new5-HostedOn-Topic_placeholder14">
+                <SourceElement ref="Topic_new5"/>
+                <TargetElement ref="Mosquitto_2.0-w1_04"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_4100">
+                <SourceElement ref="Mosquitto_2.0-w1_01"/>
+                <TargetElement ref="Ubuntu-VM_18.04-w1_12"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_5101">
+                <SourceElement ref="Ubuntu-VM_18.04-w1_12"/>
+                <TargetElement ref="VSphere_5.5-w1_03"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_4102">
+                <SourceElement ref="Mosquitto_2.0-w1_04"/>
+                <TargetElement ref="Ubuntu-VM_18.04-w1_15"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_5103">
+                <SourceElement ref="Ubuntu-VM_18.04-w1_15"/>
+                <TargetElement ref="VSphere_5.5-w1_06"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

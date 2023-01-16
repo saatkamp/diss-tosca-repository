@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/divamethod/examples" id="divaMethodExamples-BackendTestDeployment_w1-wip1">
+    <ServiceTemplate name="BackendTestDeployment_w1-wip1" targetNamespace="http://opentosca.org/divamethod/examples" id="BackendTestDeployment_w1-wip1">
+        <TopologyTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/example/applications/nodetypes" name="RealWorld-Application-Backend" minInstances="1" maxInstances="1" type="otntyIgeneral2:RealWorld-Application-Backend_Java11-Spring-w1" id="RealWorld-Application-Backend_Java11-Spring-w1_0" winery:x="568" winery:y="123">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <AppName>RealWorldApplication</AppName>
+                        <Port>get_input:BackendPort</Port>
+                        <context_root/>
+                    </Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="Java11Runtime" type="otrtyIgeneral:Java11Runtime" id="ja"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MySQL-DB_w1" minInstances="1" maxInstances="1" type="otntyIgeneral2:MySQL-DB_w1" id="MySQL-DB_w1_0" winery:x="1413" winery:y="76">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <name/>
+                        <port/>
+                        <user/>
+                        <password/>
+                        <DBName>realWorld</DBName>
+                        <DBUser>user</DBUser>
+                        <DBPassword>pass</DBPassword>
+                    </Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqMySQLDBMS" type="otrtyIgeneral:ReqMySQLDBMS" id="req2"/>
+                </Requirements>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MySQL-DBMS" minInstances="1" maxInstances="1" type="otntyIgeneral2:MySQL-DBMS_8.0-w1" id="MySQL-DBMS_8.0-w1_0" winery:x="1406" winery:y="579">
+                <Properties>
+                    <MySQLDBMSProperties xmlns="http://opentosca.org/nodetypes">
+                        <DBMSUser>root</DBMSUser>
+                        <DBMSPassword>root</DBMSPassword>
+                        <DBMSPort>3306</DBMSPort>
+                        <root_password/>
+                        <port/>
+                    </MySQLDBMSProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="OperatingSystem" type="rtyIgeneral:OperatingSystem" id="req3"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="ProvideMYSQLDBMS" type="otctyIgeneral:ProvideMYSQLDBMS" id="cap1"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="OpenStack" minInstances="1" maxInstances="1" type="otntyIgeneral2:OpenStack_22-Victoria-w1" id="OpenStack_22-Victoria-w1_0" winery:x="870" winery:y="968">
+                <Properties>
+                    <CloudProviderProperties xmlns="http://opentosca.org/nodetypes">
+                        <HypervisorEndpoint/>
+                        <HypervisorApplicationID/>
+                        <HypervisorApplicationSecret/>
+                    </CloudProviderProperties>
+                </Properties>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="CapCanHostUbuntuVM" type="otctyIgeneral:CapCanHostUbuntuVM" id="cap12"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Ubuntu-VM" minInstances="1" maxInstances="1" type="otntyIgeneral2:Ubuntu-VM_20.04-w1" id="Ubuntu-VM_20.04-w1_0" winery:x="894" winery:y="506">
+                <Properties>
+                    <VirtualMachineProperties xmlns="http://opentosca.org/nodetypes">
+                        <instanceRef/>
+                        <VMIP/>
+                        <VMInstanceID/>
+                        <VMType/>
+                        <VMUserName/>
+                        <VMUserPassword/>
+                        <VMPrivateKey/>
+                        <VMPublicKey/>
+                        <VMKeyPairName/>
+                    </VirtualMachineProperties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostUbuntuVM" type="otrtyIgeneral:ReqCanHostUbuntuVM" id="req11"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:ctyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/capabilitytypes" name="OperatingSystem" type="ctyIgeneral:OperatingSystem" id="cap11"/>
+                </Capabilities>
+            </NodeTemplate>
+            <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Java" minInstances="1" maxInstances="1" type="otntyIgeneral2:Java_11-w1" id="Java_11-w1_0" winery:x="511" winery:y="660">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <component_version/>
+                        <admin_credential/>
+                    </Properties>
+                </Properties>
+                <Requirements>
+                    <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="OperatingSystem" type="rtyIgeneral:OperatingSystem" id="req10"/>
+                </Requirements>
+                <Capabilities>
+                    <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="Java11Runtime" type="otctyIgeneral:Java11Runtime" id="cap5"/>
+                </Capabilities>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1">
+                <SourceElement ref="MySQL-DBMS_8.0-w1_0"/>
+                <TargetElement ref="Ubuntu-VM_20.04-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_2">
+                <SourceElement ref="Ubuntu-VM_20.04-w1_0"/>
+                <TargetElement ref="OpenStack_22-Victoria-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_3">
+                <SourceElement ref="MySQL-DB_w1_0"/>
+                <TargetElement ref="MySQL-DBMS_8.0-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="ConnectsTo" type="ToscaBaseTypes:ConnectsTo" id="con_ConnectsTo_0">
+                <Properties>
+                    <properties xmlns="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes/propertiesdefinition/winery">
+                        <ChannelType/>
+                    </properties>
+                </Properties>
+                <SourceElement ref="RealWorld-Application-Backend_Java11-Spring-w1_0"/>
+                <TargetElement ref="MySQL-DB_w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0">
+                <SourceElement ref="RealWorld-Application-Backend_Java11-Spring-w1_0"/>
+                <TargetElement ref="Java_11-w1_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_4">
+                <SourceElement ref="Java_11-w1_0"/>
+                <TargetElement ref="Ubuntu-VM_20.04-w1_0"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>
