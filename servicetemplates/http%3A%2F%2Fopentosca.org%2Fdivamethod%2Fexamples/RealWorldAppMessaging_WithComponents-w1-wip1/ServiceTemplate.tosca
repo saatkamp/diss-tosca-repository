@@ -4,13 +4,13 @@
         <TopologyTemplate>
             <NodeTemplate xmlns:patternSolutionNodeTypes="http://opentosca.org/patternsolutions/nodetypes" name="PublisherProxy" minInstances="1" maxInstances="1" type="patternSolutionNodeTypes:PublisherProxy" id="PublisherProxy_0" winery:x="409" winery:y="282">
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" xmlns:otateIgeneral="http://opentosca.org/patternsolutions/artifacttemplates" name="app" artifactType="ToscaBaseTypes:ArchiveArtifact" artifactRef="otateIgeneral:PublisherProxy_DA"/>
+                    <DeploymentArtifact xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" xmlns:otateIgeneral="http://opentosca.org/patternsolutions/artifacttemplates" name="app" artifactType="ToscaBaseTypes:ArchiveArtifact" artifactRef="otateIgeneral:PublisherProxy_DA-w1"/>
                     <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="driverp" artifactType="driverInjectionArtifactTypes:MQTT-Driver_Python3.8-w1" artifactRef="driverInjectionArtifactTemplates:MQTT-Driver-DA_Python3.8-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:patternSolutionNodeTypes="http://opentosca.org/patternsolutions/nodetypes" name="SubscriberProxy" minInstances="1" maxInstances="1" type="patternSolutionNodeTypes:SubscriberProxy" id="SubscriberProxy_0" winery:x="1061" winery:y="76">
                 <DeploymentArtifacts>
-                    <DeploymentArtifact xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" xmlns:otateIgeneral="http://opentosca.org/patternsolutions/artifacttemplates" name="subscr" artifactType="ToscaBaseTypes:ArchiveArtifact" artifactRef="otateIgeneral:SubscriberProxy_DA"/>
+                    <DeploymentArtifact xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" xmlns:otateIgeneral="http://opentosca.org/patternsolutions/artifacttemplates" name="subscr" artifactType="ToscaBaseTypes:ArchiveArtifact" artifactRef="otateIgeneral:SubscriberProxy_DA-w1"/>
                     <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="javadriver" artifactType="driverInjectionArtifactTypes:MQTT-Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:MQTT-Driver-DA_Java11-w1"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
