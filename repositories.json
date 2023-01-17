@@ -18,10 +18,5 @@
     "name": "OpenTOSCA Example Application",
     "url": "https://github.com/OpenTOSCA/tosca-definitions-example-applications",
     "branch": "main"
-  },
-  {
-    "name": "EDMM Modeling Repository",
-    "url": "https://github.com/UST-EDMM/modeling-repository",
-    "branch": "master"
   }
 ]

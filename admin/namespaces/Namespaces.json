@@ -199,6 +199,14 @@
     "patternCollection" : false,
     "secureCollection" : false
   },
+  "http://opentosca.org/matching/providers/publiccloud/aws" : {
+    "namespace" : "http://opentosca.org/matching/providers/publiccloud/aws",
+    "prefix" : "otIaws",
+    "readableName" : "",
+    "generatedNamespace" : false,
+    "patternCollection" : false,
+    "secureCollection" : false
+  },
   "http://opentosca.org/problemdetection/policytemplates" : {
     "namespace" : "http://opentosca.org/problemdetection/policytemplates",
     "prefix" : "otpteIgeneral",
