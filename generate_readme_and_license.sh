@@ -20,13 +20,15 @@ for dir in $folders; do
     echo "" >> $dir/README.md
     tosca_files=$(find $dir -name '*.tosca')
     if [ $(echo $tosca_files | wc -w) -gt 0 ]; then
-        echo "## Properties" >> $dir/README.md
-        echo "" >>$dir/README.md
         keys=$(awk -F '<|>' '/<[^:]*:key>/ {print $3}' $tosca_files)
-        for key in $keys; do
-            echo "* \`$key\`" >> $dir/README.md
-        done
-        echo "" >> $dir/README.md
+        if [ -n "$keys" ]; then
+            echo "## Properties" >> $dir/README.md
+            echo "" >>$dir/README.md
+            for key in $keys; do
+                echo "* \`$key\`" >> $dir/README.md
+            done
+            echo "" >> $dir/README.md
+        fi
     fi
     echo "## Haftungsausschluss" >> $dir/README.md
     echo "" >> $dir/README.md

@@ -27,7 +27,7 @@
                     </properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="RabbitMQ" minInstances="1" maxInstances="1" type="otntyIgeneral1:RabbitMQ_3.10-w1-wip1" id="RabbitMQ_3.10-w1-wip1_0" winery:x="1016" winery:y="483"/>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="RabbitMQ" minInstances="1" maxInstances="1" type="otntyIgeneral1:RabbitMQ_3.10-w1" id="RabbitMQ_3.10-w1_0" winery:x="1016" winery:y="483"/>
             <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="UbuntuContainer" minInstances="1" maxInstances="1" type="otntyIgeneral1:UbuntuContainer_20.04-w1" id="UbuntuContainer_20.04-w1_0" winery:x="799" winery:y="664">
                 <Properties>
                     <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
@@ -48,7 +48,7 @@
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_0">
                 <SourceElement ref="Topic_0"/>
-                <TargetElement ref="RabbitMQ_3.10-w1-wip1_0"/>
+                <TargetElement ref="RabbitMQ_3.10-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_1">
                 <SourceElement ref="SpringWebApp_w1_0"/>
@@ -59,7 +59,7 @@
                 <TargetElement ref="UbuntuContainer_20.04-w1_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:ToscaBaseTypes="http://docs.oasis-open.org/tosca/ns/2011/12/ToscaBaseTypes" name="HostedOn" type="ToscaBaseTypes:HostedOn" id="con_HostedOn_3">
-                <SourceElement ref="RabbitMQ_3.10-w1-wip1_0"/>
+                <SourceElement ref="RabbitMQ_3.10-w1_0"/>
                 <TargetElement ref="UbuntuContainer_20.04-w1_0"/>
             </RelationshipTemplate>
         </TopologyTemplate>
