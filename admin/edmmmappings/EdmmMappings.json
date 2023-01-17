@@ -90,8 +90,5 @@
     "edmmType" : "mysql_dbms",
     "toscaType" : "{http://opentosca.org/nodetypes}MySQL-DBMS_5.7-w1"
   } ],
-  "edmmTypeMapping" : [ {
-    "edmmType" : "web_application",
-    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}PetClinic"
-  } ]
+  "edmmTypes" : [ "auth0", "aws_aurora", "aws_beanstalk", "compute", "database", "dbaas", "dbms", "go", "mom", "mongodb", "mongodb_schema", "mysql_database", "mysql_dbms", "paas", "platform", "rabbitmq", "base", "saas", "software_component", "tomcat", "web_application", "web_server", "depends_on", "connects_to", "hosted_on" ]
 }

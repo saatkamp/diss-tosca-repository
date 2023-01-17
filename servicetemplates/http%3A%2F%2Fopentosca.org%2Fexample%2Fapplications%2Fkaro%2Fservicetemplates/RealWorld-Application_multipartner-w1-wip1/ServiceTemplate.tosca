@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/example/applications/servicetemplates" id="exampleServiceTemplates-RealWorld-Application_Karo-multipartner-w1-wip1-w1-wip1">
-    <ServiceTemplate name="RealWorld-Application_Karo-multipartner-w1-wip1-w1-wip1" targetNamespace="http://opentosca.org/example/applications/servicetemplates" id="RealWorld-Application_Karo-multipartner-w1-wip1-w1-wip1">
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://opentosca.org/example/applications/karo/servicetemplates" id="exampleServiceTemplates-RealWorld-Application_multipartner-w1-wip1">
+    <ServiceTemplate name="RealWorld-Application_multipartner-w1-wip1" targetNamespace="http://opentosca.org/example/applications/karo/servicetemplates" id="RealWorld-Application_multipartner-w1-wip1">
         <Tags>
-            <Tag name="participant" value="Karo"/>
-            <Tag name="choreography" value="DockerEngine,RealWorld-Application_Angular-w1_0,NGINX_latest-w1_0,DockerContainer_w1_0"/>
-            <Tag name="app_chor_id" value="RealWorldApp"/>
-            <Tag name="Lukas" value="http://193.196.53.131:8081/invoker"/>
-            <Tag name="Karo" value="http://193.196.52.187:8081/invoker"/>
             <Tag name="participant:Karo" value="http://193.196.52.187:8081/invoker"/>
             <Tag name="participant:Lukas" value="http://193.196.53.131:8081/invoker"/>
         </Tags>
