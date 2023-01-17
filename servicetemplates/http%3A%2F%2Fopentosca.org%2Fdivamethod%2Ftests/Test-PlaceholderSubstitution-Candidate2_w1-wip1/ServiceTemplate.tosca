@@ -3,7 +3,13 @@
     <ServiceTemplate name="Test-PlaceholderSubstitution-Candidate2_w1-wip1" targetNamespace="http://opentosca.org/divamethod/tests" id="Test-PlaceholderSubstitution-Candidate2_w1-wip1">
         <TopologyTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral2:Mosquitto_2.0-w1" id="Mosquitto_2.0-w1_0" winery:x="1102" winery:y="460">
-                <Capabilities>
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <State>Running</State>
+                        <VMIP>193.196.54.255</VMIP>
+                        <DefaultPort>1883</DefaultPort>
+                    </Properties>
+                </Properties><Capabilities>
                     <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="ProvideTopic" type="otctyIgeneral:ProvideTopic" id="HereIsATopic"/>
                 </Capabilities>
                 <DeploymentArtifacts>

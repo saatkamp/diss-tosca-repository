@@ -74,6 +74,13 @@
                 </Requirements>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral2:Mosquitto_2.0-w1" id="Mosquitto_2.0-w1_0" winery:x="967" winery:y="412">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <State>Running</State>
+                        <VMIP>193.196.54.255</VMIP>
+                        <DefaultPort>1883</DefaultPort>
+                    </Properties>
+                </Properties>
                 <Requirements>
                     <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="OperatingSystem" type="rtyIgeneral:OperatingSystem" id="InfrastructureReq2"/>
                 </Requirements>

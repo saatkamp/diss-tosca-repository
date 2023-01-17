@@ -10,11 +10,11 @@
         <TopologyTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDB_10-w1" id="MariaDB_10-w1_0" winery:x="399" winery:y="88" winery:participant="Karo">
                 <Properties>
-                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                    <Properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
                         <DBName/>
                         <DBUser/>
                         <DBPassword/>
-                    </properties>
+                    </Properties>
                 </Properties>
                 <Requirements>
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostMariaDB" type="otrtyIgeneral:ReqCanHostMariaDB" id="NeedDBMS"/>
@@ -22,11 +22,11 @@
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="MariaDB" minInstances="1" maxInstances="1" type="otntyIgeneral2:MariaDB_10-w1" id="MariaDB_10-w1_1" winery:x="1359" winery:y="749" winery:participant="Lukas">
                 <Properties>
-                    <properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
+                    <Properties xmlns="http://opentosca.org/nodetypes/propertiesdefinition/winery">
                         <DBName/>
                         <DBUser/>
                         <DBPassword/>
-                    </properties>
+                    </Properties>
                 </Properties>
                 <Requirements>
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="ReqCanHostMariaDB" type="otrtyIgeneral:ReqCanHostMariaDB" id="NeedA"/>
@@ -63,6 +63,11 @@
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_new2" winery:x="1387" winery:y="240" winery:participant="Lukas">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Name>job</Name>
+                    </Properties>
+                </Properties>
                 <Requirements>
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_1" type="otrtyIgeneral:MessageBroker" id="req_1"/>
                 </Requirements>
@@ -84,6 +89,11 @@
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_new5" winery:x="1051" winery:y="448" winery:participant="Lukas">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Name>job</Name>
+                    </Properties>
+                </Properties>
                 <Requirements>
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_2" type="otrtyIgeneral:MessageBroker" id="req_2"/>
                 </Requirements>
@@ -97,11 +107,23 @@
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="PublisherProxy_placeholder10" minInstances="1" maxInstances="1" type="tyIgeneral:PublisherProxy_placeholder" id="PublisherProxy_placeholder10" winery:x="995" winery:y="871" winery:participant="Lukas">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>get_input: Port</Port>
+                        <VMIP>get_input: VMIP</VMIP>
+                    </Properties>
+                </Properties>
                 <Capabilities>
                     <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_10" type="otctyIgeneral:Java11Runtime" id="cap_10"/>
                 </Capabilities>
             </NodeTemplate>
             <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="PublisherProxy_placeholder11" minInstances="1" maxInstances="1" type="tyIgeneral:PublisherProxy_placeholder" id="PublisherProxy_placeholder11" winery:x="1004" winery:y="273" winery:participant="Karo">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>get_input: Port</Port>
+                        <VMIP>get_input: VMIP</VMIP>
+                    </Properties>
+                </Properties>
                 <Capabilities>
                     <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_11" type="otctyIgeneral:Java11Runtime" id="cap_11"/>
                 </Capabilities>
@@ -117,6 +139,13 @@
                 </Capabilities>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral2:Mosquitto_2.0-w1" id="Mosquitto_2.0-w1_01" winery:x="967" winery:y="412">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <State>Running</State>
+                        <VMIP>193.196.54.255</VMIP>
+                        <DefaultPort>1883</DefaultPort>
+                    </Properties>
+                </Properties>
                 <Requirements>
                     <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="OperatingSystem" type="rtyIgeneral:OperatingSystem" id="InfrastructureReq2"/>
                 </Requirements>
@@ -163,6 +192,13 @@
                 </Capabilities>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral2:Mosquitto_2.0-w1" id="Mosquitto_2.0-w1_04" winery:x="967" winery:y="412">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <State>Running</State>
+                        <VMIP>193.196.54.255</VMIP>
+                        <DefaultPort>1883</DefaultPort>
+                    </Properties>
+                </Properties>
                 <Requirements>
                     <Requirement xmlns:rtyIgeneral="http://docs.oasis-open.org/tosca/ToscaNormativeTypes/requirementtypes" name="OperatingSystem" type="rtyIgeneral:OperatingSystem" id="InfrastructureReq2_1"/>
                 </Requirements>

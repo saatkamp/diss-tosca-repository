@@ -61,6 +61,11 @@
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_new2" winery:x="1387" winery:y="240" winery:participant="Lukas">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Name>job</Name>
+                    </Properties>
+                </Properties>
                 <Requirements>
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_1" type="otrtyIgeneral:MessageBroker" id="req_1"/>
                 </Requirements>
@@ -82,6 +87,11 @@
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_new5" winery:x="1051" winery:y="448" winery:participant="Lukas">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Name>job</Name>
+                    </Properties>
+                </Properties>
                 <Requirements>
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="req_2" type="otrtyIgeneral:MessageBroker" id="req_2"/>
                 </Requirements>
@@ -95,16 +105,33 @@
                 </DeploymentArtifacts>
             </NodeTemplate>
             <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="Topic_placeholder9" minInstances="1" maxInstances="1" type="tyIgeneral:Topic_placeholder" id="Topic_placeholder9" winery:x="1387" winery:y="440" winery:participant="Lukas">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Name>job</Name>
+                    </Properties>
+                </Properties>
                 <Capabilities>
                     <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_9" type="otctyIgeneral:ProvideTopic" id="cap_9"/>
                 </Capabilities>
             </NodeTemplate>
             <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="PublisherProxy_placeholder10" minInstances="1" maxInstances="1" type="tyIgeneral:PublisherProxy_placeholder" id="PublisherProxy_placeholder10" winery:x="995" winery:y="871" winery:participant="Lukas">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>get_input: Port</Port>
+                        <VMIP>get_input: VMIP</VMIP>
+                    </Properties>
+                </Properties>
                 <Capabilities>
                     <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_10" type="otctyIgeneral:Java11Runtime" id="cap_10"/>
                 </Capabilities>
             </NodeTemplate>
             <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="PublisherProxy_placeholder11" minInstances="1" maxInstances="1" type="tyIgeneral:PublisherProxy_placeholder" id="PublisherProxy_placeholder11" winery:x="1004" winery:y="273" winery:participant="Karo">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Port>get_input: Port</Port>
+                        <VMIP>get_input: VMIP</VMIP>
+                    </Properties>
+                </Properties>
                 <Capabilities>
                     <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_11" type="otctyIgeneral:Java11Runtime" id="cap_11"/>
                 </Capabilities>
@@ -120,6 +147,11 @@
                 </Capabilities>
             </NodeTemplate>
             <NodeTemplate xmlns:tyIgeneral="http://opentosca/multiparticipant/placeholdertypes" name="Topic_placeholder14" minInstances="1" maxInstances="1" type="tyIgeneral:Topic_placeholder" id="Topic_placeholder14" winery:x="1051" winery:y="648" winery:participant="Lukas">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <Name>job</Name>
+                    </Properties>
+                </Properties>
                 <Capabilities>
                     <Capability xmlns:otctyIgeneral="http://opentosca.org/capabilitytypes" name="cap_14" type="otctyIgeneral:ProvideTopic" id="cap_14"/>
                 </Capabilities>

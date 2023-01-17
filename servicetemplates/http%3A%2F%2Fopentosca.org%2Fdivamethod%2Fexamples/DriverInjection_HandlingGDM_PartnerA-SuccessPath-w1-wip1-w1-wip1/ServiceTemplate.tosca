@@ -68,8 +68,14 @@
                     <Requirement xmlns:otrtyIgeneral="http://opentosca.org/requirementtypes" name="MessageBroker" type="otrtyIgeneral:MessageBroker" id="ReqBroker"/>
                 </Requirements>
             </NodeTemplate>
-            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral1:Mosquitto_2.0-w1-wip1" id="Mosquitto_2.0-w1-wip1_0" winery:x="715" winery:y="433">
-                <DeploymentArtifacts>
+            <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="Mosquitto" minInstances="1" maxInstances="1" type="otntyIgeneral1:Mosquitto_2.0-w1" id="Mosquitto_2.0-w1-wip1_0" winery:x="715" winery:y="433">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <State>Running</State>
+                        <VMIP>193.196.54.255</VMIP>
+                        <DefaultPort>1883</DefaultPort>
+                    </Properties>
+                </Properties><DeploymentArtifacts>
                     <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Driver_Java11-w1" artifactType="driverInjectionArtifactTypes:MQTT-Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:MQTT-Driver-DA_Java11-w1"/>
                     <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Python38Driver" artifactType="driverInjectionArtifactTypes:MQTT-Driver_Python3.8-w1" artifactRef="driverInjectionArtifactTemplates:MQTT-Driver-DA_Python3.8-w1"/>
                 </DeploymentArtifacts>
