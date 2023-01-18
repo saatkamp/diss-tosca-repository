@@ -31,14 +31,6 @@
     "patternCollection" : false,
     "secureCollection" : false
   },
-  "http://opentosca.org/capabilitytypes" : {
-    "namespace" : "http://opentosca.org/capabilitytypes",
-    "prefix" : "otctyIgeneral",
-    "readableName" : "",
-    "generatedNamespace" : false,
-    "patternCollection" : false,
-    "secureCollection" : false
-  },
   "http://www.w3.org/2001/XMLSchema" : {
     "namespace" : "http://www.w3.org/2001/XMLSchema",
     "prefix" : "xsd",
@@ -143,33 +135,9 @@
     "patternCollection" : false,
     "secureCollection" : false
   },
-  "http://opentosca.org/patternsolutions/nodetypeimplementations" : {
-    "namespace" : "http://opentosca.org/patternsolutions/nodetypeimplementations",
-    "prefix" : "otntyiIgeneral",
-    "readableName" : "",
-    "generatedNamespace" : false,
-    "patternCollection" : false,
-    "secureCollection" : false
-  },
-  "http://opentosca.org/requirementtypes" : {
-    "namespace" : "http://opentosca.org/requirementtypes",
-    "prefix" : "otrtyIgeneral",
-    "readableName" : "",
-    "generatedNamespace" : false,
-    "patternCollection" : false,
-    "secureCollection" : false
-  },
   "http://opentosca.org/matching/providers/privatecloud2" : {
     "namespace" : "http://opentosca.org/matching/providers/privatecloud2",
     "prefix" : "otIprivatecloud1",
-    "readableName" : "",
-    "generatedNamespace" : false,
-    "patternCollection" : false,
-    "secureCollection" : false
-  },
-  "http://opentosca.org/patternsolutions/nodetypes" : {
-    "namespace" : "http://opentosca.org/patternsolutions/nodetypes",
-    "prefix" : "patternSolutionNodeTypes",
     "readableName" : "",
     "generatedNamespace" : false,
     "patternCollection" : false,
