@@ -63,7 +63,7 @@
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_new2" winery:x="1387" winery:y="240" winery:participant="Lukas">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
-                        <Name>job</Name>
+                        <TopicName>job</TopicName>
                     </Properties>
                 </Properties>
                 <Requirements>
@@ -89,7 +89,7 @@
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_new5" winery:x="1051" winery:y="448" winery:participant="Lukas">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
-                        <Name>job</Name>
+                        <TopicName>job</TopicName>
                     </Properties>
                 </Properties>
                 <Requirements>
@@ -141,7 +141,7 @@
                     <Properties xmlns="http://www.example.org">
                         <State>Running</State>
                         <VMIP>193.196.54.255</VMIP>
-                        <DefaultPort>1883</DefaultPort>
+                        <Port>1883</Port>
                     </Properties>
                 </Properties>
                 <Requirements>
@@ -194,7 +194,7 @@
                     <Properties xmlns="http://www.example.org">
                         <State>Running</State>
                         <VMIP>193.196.54.255</VMIP>
-                        <DefaultPort>1883</DefaultPort>
+                        <Port>1883</Port>
                     </Properties>
                 </Properties>
                 <Requirements>

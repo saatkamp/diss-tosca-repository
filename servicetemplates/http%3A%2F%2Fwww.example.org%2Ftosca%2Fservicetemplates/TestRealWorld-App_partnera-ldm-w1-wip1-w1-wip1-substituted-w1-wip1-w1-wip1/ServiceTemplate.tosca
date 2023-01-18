@@ -115,7 +115,7 @@
                     <Properties xmlns="http://www.example.org">
                         <State>Running</State>
                         <VMIP/>
-                        <DefaultPort>1883</DefaultPort>
+                        <Port>1883</Port>
                     </Properties>
                 </Properties>
                 <Capabilities>

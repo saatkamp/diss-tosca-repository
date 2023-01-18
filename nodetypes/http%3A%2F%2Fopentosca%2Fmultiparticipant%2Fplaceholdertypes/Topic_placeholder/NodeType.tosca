@@ -7,7 +7,7 @@
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
             <winery:properties>
-                <winery:key>DefaultPort</winery:key>
+                <winery:key>Port</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
         </winery:PropertiesDefinition>

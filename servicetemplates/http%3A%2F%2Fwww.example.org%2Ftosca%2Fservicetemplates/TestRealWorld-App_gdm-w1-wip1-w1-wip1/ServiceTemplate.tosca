@@ -91,7 +91,7 @@
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <VMIP>get_input: VMIP</VMIP>
-                        <DefaultPort>get_input: DefaultPort</DefaultPort>
+                        <Port>get_input: Port</Port>
                     </Properties>
                 </Properties>
                 <Capabilities>

@@ -9,7 +9,7 @@
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_0" winery:x="969" winery:y="269" winery:participant="partnerA">
                 <Properties>
                     <TopicProperties xmlns="http://opentosca.org/properties">
-                        <Name/>
+                        <TopicName/>
                     </TopicProperties>
                 </Properties>
                 <Requirements>

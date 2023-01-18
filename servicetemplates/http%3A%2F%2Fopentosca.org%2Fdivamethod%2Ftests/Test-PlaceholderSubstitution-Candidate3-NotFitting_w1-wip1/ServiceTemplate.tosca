@@ -5,7 +5,7 @@
             <NodeTemplate xmlns:otntyIgeneral1="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral1:Topic" id="Topic_0" winery:x="1008" winery:y="309">
                 <Properties>
                     <TopicProperties xmlns="http://opentosca.org/properties">
-                        <Name/>
+                        <TopicName/>
                     </TopicProperties>
                 </Properties>
             </NodeTemplate>

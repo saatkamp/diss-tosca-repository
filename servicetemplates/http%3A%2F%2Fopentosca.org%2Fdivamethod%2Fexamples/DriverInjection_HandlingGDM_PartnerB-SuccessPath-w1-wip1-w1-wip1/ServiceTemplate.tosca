@@ -75,7 +75,7 @@
                     <Properties xmlns="http://www.example.org">
                         <State>Running</State>
                         <VMIP>193.196.54.255</VMIP>
-                        <DefaultPort>1883</DefaultPort>
+                        <Port>1883</Port>
                     </Properties>
                 </Properties><DeploymentArtifacts>
                     <DeploymentArtifact xmlns:driverInjectionArtifactTypes="http://opentosca.org/driverinjection/artifacttypes" xmlns:driverInjectionArtifactTemplates="http://opentosca.org/driverinjection/artifacttemplates" name="Driver_Java11-w1" artifactType="driverInjectionArtifactTypes:MQTT-Driver_Java11-w1" artifactRef="driverInjectionArtifactTemplates:MQTT-Driver-DA_Java11-w1"/>

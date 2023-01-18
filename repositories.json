@@ -17,6 +17,6 @@
   {
     "name": "OpenTOSCA Example Application",
     "url": "https://github.com/OpenTOSCA/tosca-definitions-example-applications",
-    "branch": "main"
+    "branch": "karo-diss-tosca-types"
   }
 ]

@@ -9,7 +9,7 @@
             <NodeTemplate xmlns:otntyIgeneral2="http://opentosca.org/nodetypes" name="Topic" minInstances="1" maxInstances="1" type="otntyIgeneral2:Topic" id="Topic_0" winery:location="PublicCloud" winery:x="729" winery:y="87" winery:participant="partnerA">
                 <Properties>
                     <TopicProperties xmlns="http://opentosca.org/properties">
-                        <Name/>
+                        <TopicName/>
                     </TopicProperties>
                 </Properties>
                 <Requirements>
@@ -43,7 +43,7 @@
                     <Properties xmlns="http://www.example.org">
                         <State>Running</State>
                         <VMIP>193.196.54.255</VMIP>
-                        <DefaultPort>1883</DefaultPort>
+                        <Port>1883</Port>
                     </Properties>
                 </Properties>
                 <Requirements>

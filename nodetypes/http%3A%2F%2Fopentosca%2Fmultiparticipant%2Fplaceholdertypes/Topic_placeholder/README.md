@@ -3,7 +3,7 @@
 ## Properties
 
 * `VMIP`
-* `DefaultPort`
+* `Port`
 
 ## Haftungsausschluss
 
